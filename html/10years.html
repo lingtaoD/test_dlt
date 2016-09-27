@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+	html { overflow-x: hidden; overflow-y: auto; } 
+	   *{
+		padding: 0px;
+		margin:0px auto;
+		}
+		#all{
+		width: 1350px;
+		/*height: 100000px;*/
+		font-family: Arial,"Hiragino Sans GB","冬青黑","Microsoft YaHei","微软雅黑",SimSun,Helvetica,Tahoma,sans-serif;
+		}
+	/*login的开始*/
+		.login{
+		width: 1350px;
+		height: 660px;
+		background: url(../img/login_bg.jpg) no-repeat;
+		background-size: 100% 100%;
+	/*	position: absolute;*/
+		}
+		.model{
+			width: 1350px;
+			height: 660px;
+			background: rgba(0,0,0,0.4);
+			position: absolute;
+			overflow: hidden;
+		}
+	/*	logo区*/
+		.login_top{
+			width: 1346px;
+			height: 40px;
+			margin-top: 20px;
+			padding-left: 20px;
+		}
+		.login_top h1{
+			width: 134px;
+			height: 36px;
+			float: left;
+		}
+		.login_top h1 a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.login_top img{
+			width: 100%;
+			height: 100%;
+		}
+		.login_top_right{
+			float: right;
+			width: 200px;
+			height: 40px;
+			line-height: 40px;
+		}
+		.login_top_right a{
+			display: block;
+			text-decoration: none;
+			color: white;
+			font-size: 13px;
+			
+		}
+		.login_a{
+			width: 74px;
+			height: 30px;
+			border: 1px solid white;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 30px;
+			float: left;	
+			margin-right: 20px;
+			cursor: pointer;
+		}
+		.login_a:hover{
+			background:#00b4ff;
+			border-color: #00b4ff;
+		}
+		.about_a{
+			margin-right: 10px;
+			margin-top: -4px;
+		}
+		.about_a:hover{
+			text-decoration: underline;
+		}
+		/*内容*/
+		.login_content{
+			width: 700px;
+			height: 430px;
+			margin:60px auto;
+			position: relative;
+		}
+		.login_content_top{
+			width: 700px;
+			height: 54px;
+			font-size: 52px;
+			color: white;
+			line-height: 54px;
+			text-align: center;
+			letter-spacing: 5px;
+		}
+		/*登录页面*/
+		#sign_form{
+			width: 300px;
+			height: 185px;
+			margin: 60px auto;
+		}
+		.email_div,.password_div{
+			width: 300px;
+			height: 40px;
+			margin-bottom: 20px;
+		}
+		#email_ipt,#password_ipt{
+			width: 300px;
+			height: 40px;
+			border: 1px solid white;
+			border-radius: 5px;
+			background: #4c83ad;
+			text-align: center;
+			color: white;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.password_checked{
+			width: 300px;
+			height: 19px;
+			margin-bottom: 10px;
+			font-size: 13px;
+			color: white;
+		}
+		.password_checked a{
+			float: right;
+			color: white;
+			text-decoration: none;
+		}
+	
+		#sign_btn,#gogo{
+			width: 300px;
+			height: 36px;
+			line-height: 32px;
+			color: white;
+			text-align: center;
+			background: #00b4ff;
+			cursor: pointer;
+			font-size: 15px;
+			margin-bottom: 10px;
+			border: 0;
+			border-radius: 30px;
+			font-weight: bold;
+			position: relative;
+		}
+		#sign_btn i {
+			display: block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top:6px;
+			left: 58%;
+			background: url(../img/4.png) no-repeat center;
+		}
+		#email_tishi{
+			position: absolute;
+			width: 170px;
+			height: 30px;
+			top: 118px;
+			left: 510px;
+			display: none;
+		}
+		#email_tishi b{
+			position: absolute;
+			left: -16px;
+			width: 0px;
+			height: 0px;
+			border: 15px solid transparent;
+			border-right-color: white;
+		}
+		#password_tishi{
+			position: absolute;
+			width: 120px;
+			height: 30px;
+			top: 178px;
+			left: 510px;
+			display: none;
+		}
+		#password_tishi b{
+			position: absolute;
+			left: -16px;
+			width: 0px;
+			height: 0px;
+			border: 15px solid transparent;
+			border-right-color: white;
+		}
+		#email_sp{
+			display: block;
+			background: white;
+			width: 150px;
+			height: 30px;
+			line-height: 30px;
+			border:1px solid white;
+			text-align: center;
+			font-size: 10px;
+			border-radius: 7px;	
+		}
+		#password_sp{
+			display: block;
+			background: white;
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			border:1px solid white;
+			text-align: center;
+			font-size: 10px;
+			border-radius: 7px;
+		}
+
+			/*注册页面*/
+		#register_div{
+			width: 300px;
+			height: 156px;
+			margin: 60px auto;
+			display: none;
+		}
+		#gogo{
+
+		}
+
+		/*	简单介绍*/
+		.login_desc{
+			width: 700px;
+			height: 71px;
+			text-align: center;
+			color: white;
+			margin-top: 80px;
+		}
+		#login_next{
+			display: block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			left: 50%;
+			background: url(../img/1.png) no-repeat;
+		}
+		/*第二屏开始*/
+		.timeContent{
+			width: 1350px;
+			height: 660px;
+			background: url(../img/login_timeline_bg.jpg) no-repeat;
+			background-size: 100% 100%;
+			/*overflow: hidden;*/
+		}
+		#tenContent{
+			width: 13500px;
+			height: 439px;
+			position: absolute;
+			left: -8110px;
+		}
+		.slider_item{
+			width: 1350px;
+			height: 439px;
+			float: left;
+
+		}
+		.slider_content{
+			width: 800px;
+			height: 143px;
+			margin-top: 140px;
+		}
+		.slider_content_leftFather{
+			float: left;
+			width: 15%;
+			height: 80px;
+			color: white;
+		}
+		.slider_content_left{
+			background: #00b4ff;
+			width: 60px;
+			height: 60px;
+			padding:10px;
+			position: absolute;
+		}
+		.slider_content_left p{	
+			height: 20px;
+			width: 50px;
+			text-align: center;
+			line-height: 20px;
+			font-size: 20px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			margin: 8px auto 10px;
+		}
+		.slider_content_left span{
+			display: inline-block;
+			width: 20px;
+			height: 13px;
+			line-height: 13px;
+			text-align: center;
+			font-size: 13px;
+			margin: 0px 3px 10px;
+		}
+		.slider_content_right{
+			width: 85%;
+			color: white;
+			float: left;
+		}
+		.slider_content_right p:first-child{
+			color: #00b4ff;
+			font-size: 45px;
+			font-weight: bolder;
+		}
+		.slider_content_right p:nth-child(2){
+			margin: 16px 0 20px;
+			font-size: 18px;
+		}
+		.slider_content_right p:nth-child(3){
+			font-size: 14px;
+			line-height: 22px;
+		}
+		.left_next_father,.right_next_father{
+			width: 80px;
+			height: 40px;
+			position: absolute;
+			margin-top: 160px;
+		}
+		.left_next_father:hover #left_next{
+			left: -20px;
+		}
+		.right_next_father:hover #right_next{
+			left: 20px;
+		}
+		#left_next,#right_next{
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			background-size: 100% 100%;
+			/*margin-top: 100px;*/
+			cursor: pointer;
+			/*transition: all 0.5s;*/
+		}
+		#left_next img,#right_next img{
+			width: 40px;
+			height: 40px;
+		}
+		.left_next_father{
+			margin-left:30px;
+		}
+		.right_next_father{
+			margin-left: 1275px;
+		}
+		#navigation{
+			width: 6578px;
+			height: 220px;
+			position: absolute;
+			margin-top: 439px;
+			cursor: move;
+			left: -730px;
+		}
+		.navigation_content{
+			width: 6578px;
+			height: 170px;
+			background-color:rgba(0,0,0,0.4); 
+		}
+		.navigation_time{
+			width: 6578px;
+			height: 51px;
+			background: white;
+		}
+		.minor{
+			width: 6578px;
+			height: 6px;
+			background: url(../img/下载.png);
+			background-position: center top;
+			white-space: nowrap;
+		}
+		.time{
+			width: 6578px;
+
+		}
+		.text_indent{
+			width: 12px;
+			height: 3px;
+			background: url(../img/下载1.png) no-repeat;
+			background-position: right;
+			display: inline-block;
+			font-size: 13px;
+			margin-left: 284px;
+			line-height: 20px;
+			white-space: nowrap;
+			text-transform: uppercase;
+			padding-top: 6px;
+			color: #666;
+		}
+		.center_line{
+			width: 3px;
+			height: 170px;
+			position: absolute;
+			background: #00b4ff;
+			left: 1408px;
+			z-index: 999;
+		}
+		.mark{
+			width: 200px;
+			height: 170px;
+			border-left: 1px solid #666;
+			margin-left: 10px;
+			float: left;
+		}
+		.first_mark{
+			margin-left: 142px;
+		}
+		.mark_content{
+			margin-left: 20px;
+			margin-top: 50px;
+			width: 150px;
+			height: 40px;
+			cursor: pointer;
+			position: relative;
+		}
+		.mark_content img{
+			width: 150px;
+			height: 40px;
+			position: absolute;
+		}
+		.mark_content p {
+			position: absolute;
+			color: white;
+			margin-left: 20px;
+			margin-top: 3px;
+			font-size: 13px;
+			font-weight: bolder;
+		}
+		/*第三屏开始*/
+		#FerrisWheel{
+			width: 1350px;
+			height: 660px;
+			background: url(../img/login_expore_bg.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.tableCell_div{
+			width: 1350px；
+			height:660px;
+			display: table-cell;
+			vertical-align: middle;	
+		}
+		.section_explore{
+			margin-top: 252px;
+			margin-left: 340px;
+			width: 680px;
+			height: 175px;
+			color: white;
+			text-align: center;
+		}
+		.section_explore h2{
+			font-size: 70px;
+			margin-bottom: 30px;
+		}
+		.explore_animation{
+			width: 680px;
+			height: 55px;
+			text-align: center;
+			font-size: 48px;
+			line-height: 55px;
+		}
+		#animation_content{
+			width: 110px;
+			height: 50px;
+			overflow: hidden;
+			position: relative;
+			vertical-align: bottom;
+			border-bottom: 3px solid white;
+			display: inline-block;
+			line-height: 50px;
+			text-align: center;
+		}
+		.explore_ul{
+			list-style: none;
+			padding: 0px;
+			position: absolute;
+		}
+		.explore_ul li {
+			width: 110px;
+			height: 50px;
+			line-height: 50px;
+			margin-bottom: 20px;
+			text-align: center;
+			overflow: hidden;
+			/*position: absolute;*/
+		}
+		.explore_ul li a{
+			text-decoration: none;
+			color: white;
+			font-size: 40px;
+		}
+		/*第四屏开始*/
+		#login_section{
+			width: 1350px;
+			height: 982px;
+		}
+		#section_content{
+			width: 1350px;
+			height: 600px;
+			background: url(../img/ty_login_channel.jpg) no-repeat;
+			background-size: 110% 110%;
+		}
+		.section_model{
+			width: 1350px;
+			height: 600px;
+			background: rgba(0,0,0,0.4);
+			margin-top: -1px;
+			position: absolute;
+		}
+		.section_channel{
+			width: 1040px;
+			height: 500px;
+			margin-top: 50px;
+		}
+		.section_channel>div{
+			display: inline-block;
+			width: 230px;
+			height: 130px;
+			overflow: hidden;
+			border-radius: 5px;
+			margin:10px;
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.d1{
+			background: url("../img/1.jpg");
+		}
+		.d8{
+			background: url("../img/8.jpg");
+		}
+		.d9{
+			background: url("../img/2.jpg");
+		}
+		.d3{
+			background: url("../img/3.jpg");
+		}
+		.d4{
+			background: url("../img/4.jpg");
+		}
+		.d5{
+			background: url("../img/5.jpg");
+		}
+		.d6{
+			background: url("../img/6.jpg");
+		}
+		.d7{
+			background: url("../img/7.jpg");
+		}
+		.section_channel a{
+			display: block;
+			width: 100%;
+			height:100%;
+			color: white;
+			text-decoration: none;
+			overflow: hidden;
+			background: rgba(0,0,0,0.3);
+			position: absolute;
+		}
+		.father_a:hover .d2{
+			top: -25px;
+		}
+		.father_a:hover .show_div{
+			top: 70px;
+		}
+		.section_channel .d2{
+			position: absolute;
+			width: 230px;
+			height: 130px;
+			line-height:130px;
+			font-size: 26px;
+			text-align: center;
+			margin: 0;
+			transition:all 0.5s;
+			/*-webkit-transition:all height 0.5s;*/
+		}
+		.show_div{
+			width: 230px;
+			height: 62px;
+			position: absolute;
+			top: 130px;
+			transition:all 0.5s;
+		}
+		.show_div div{
+			display: inline-block;
+			width: 110px;
+			height: 40px;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 0px;
+			text-align: center;
+			margin-top: 5px;
+		}
+		.show_left{
+			border-right: 1px solid white;
+		}
+		.show_div div .p1{
+			font-size: 12px;
+		}
+		/*底部*/
+		#login_floot{
+			width: 1290px;
+			height: 322px;
+			background: #22353c;
+			padding: 30px;
+			margin-top: -1px;
+		}
+		.floot_content{
+			width: 1000px;
+			height: 189px;
+		}
+		.floot_content_col{
+			width: 250px;
+			height: 189px;
+			float: left;
+		}
+		.floot_content1 img {
+			width: 134px;
+			height: 36px;
+			padding: 0px;
+			margin: 0px;
+			margin-bottom: 20px;
+		}
+		.floot_content1 p {
+			color: #aaa;
+			font-size: 13px;
+		}
+		.floot_content1 div{
+			color: #aaa;
+			margin-top: 20px;
+			font-size: 13px;
+			width: 80%;
+			line-height: 20px;
+			float: left;
+		}
+		.floot_content2 p{
+			width: 250px;
+			height: 36px;
+			line-height: 36px;
+			font-size: 16px;
+			color: #eee;
+			text-align: center;
+		}
+		.floot_content2:last-child p{
+			text-align: left;
+		}
+		.floot_content2 ul{
+			list-style: none;
+			width: 155px;
+			margin-left: 95px;
+		}
+		.floot_content2 li {
+			height: 30px;
+			line-height: 30px;
+			font-size: 13px;
+		}
+		.floot_content2 a{
+			color: #aaa;
+			text-decoration: none;
+		}
+		.floot_content2 a:hover{
+			color: white;
+		}
+		.floot_content2_child{
+			width: 100%;
+			height: 94px;
+			margin-top: 20px;
+		}
+		.floot_content2_left{
+				float: left;
+				width: 125px;
+				height: 94px;
+		}
+		.floot_content2_right{
+			float: left;
+			width: 125px;
+			height: 85px;
+		}
+		.floot_content2_right img{
+			width: 83px;
+			height: 83px;
+		}
+		.android,.ios{
+			width: 90%;
+			height: 35px;
+			border: 1px solid #00b4ff;
+			margin-bottom: 10px;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 35px;
+		}
+		.android a,.ios a{
+			text-decoration: none;
+			color: #00b4ff;
+			font-size: 13px;
+			display:block;
+			width: 100%;
+			height: 35px;
+		}
+		.android a:hover,.ios a:hover{
+			background: #00b4ff;
+			color: white;
+		}
+		.floot_content2_left img {
+			display:inline-block;
+			width: 18px;
+			height: 20px;
+			position: relative;
+			top:5px;
+			margin-right: 5px;
+		}
+		.foolt_copy{
+			width: 1000px;
+			height: 73px;
+			margin-top: 60px;
+			text-align: center;
+			color: rgba(255,255,255,.3);
+			font-size: 13px;
+		}
+		.foolt_copy a {
+			display: inline-block;
+		}
+		.foolt_copy .first_a{
+			width: 90px;
+			height: 45px;
+			background: url(../img/up.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		.foolt_copy a:last-child{
+			width: 142px;
+			height: 42px;
+			background: url(../img/badge.png) no-repeat;
+			background-size: 100% 100%; 
+			margin-left: 5px;
+		}
+		.show_DIV{
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			top: -120px;
+/*			left: 250px;*/
+			width: 200px;
+			height: 100px;
+			background:lightblue;
+			border-radius: 10px;
+			color: black;
+			padding: 5px 10px;
+			z-index: 9999;
+			display: none;
+		}
+		.qipao{
+			display: block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			border: 20px solid transparent;
+			border-top-color: lightblue;
+			top: 100px;
+			left: 20px;
+		}
+		.show_DIV b{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div id="all">
+		<!-- top注册页开始 -->
+		<div class="login">
+			<div class="model">
+				<!-- 最上面的logo -->
+				<div class="login_top">
+					<h1><a href="#"><img src="../img/logo_login.png" alt=""></a></h1>
+					<div class="login_top_right"><a class="login_a">注册</a><a href="" class="about_a">关于我们</a></div>
+				</div>
+			<!-- 	中间内容和登录表单 -->
+				<div class="login_content">
+					<div class="login_content_top">
+						与世界分享你的追梦历程
+					</div>
+					<!-- 登录表单 -->
+					<form id="sign_form">
+						<div class="email_div"><input type="text" placeholder="邮箱或手机号" id="email_ipt"></div>
+						<div class="password_div"><input type="password" placeholder="密码" id="password_ipt"></div>
+						<div class="password_checked">
+							<input type="checkbox" checked="checked"><span>记住我</span>
+							<a href="#">忘记密码？</a>
+						</div>
+						<button id="sign_btn">登录
+							<i id="left_login"></i>
+						</button>
+					</form>
+					<div id="email_tishi"><b></b><span id="email_sp">邮箱或手机号不能为空</span></div>
+					<div id="password_tishi"><b></b><span id="password_sp">密码不能为空</span></div>
+					<!-- 注册页面 -->
+					<div id="register_div">
+						<div class="email_div"><input type="text" placeholder="邮箱" id="email_ipt" class="email_ipt"></div>
+						<div class="password_div"><input type="password" placeholder="密码" id="password_ipt" class="password_ipt"></div>
+						<button id="gogo">去未来</button>
+					</div>
+					<!-- 简单的介绍 -->
+					<div class="login_desc">
+						<p>「十年后」是一个基于梦想的经验交流社区。</p>
+						<p>在这里，你可以自由的分享关于未来梦想的真实想法，</p>
+						<p>并探索更多有趣的梦想，结交志同道合的人。</p>
+					</div>
+				</div>
+				<!-- <a href="#timeContent" id="login_next"></a> -->
+			</div>
+		</div>
+		<!-- login结束 -->
+
+		<!-- 时间尺开始 -->
+		<div class="timeContent" id="timeContent">
+			<div class="model">
+				<div id="tenContent">
+					 <div class="slider_item">
+					 	<div class="slider_content">
+						 	<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2013</p>
+						 			<span>Mar</span>
+						 			<span>13</span>
+						 		</div>
+						 	</div>
+					 		<div class="slider_content_right">
+					 			<p>一个想法</p>
+					 			<p>@ The head of Da Xing</p>
+					 			<p>说出「让我们分享未来梦想」的想法。我们已经浪费了太多时间关注琐碎的事情。但是我们可以随时选择自己的人生：创造全新的事物。</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2013</p>
+						 			<span>May</span>
+						 			<span>18</span>
+						 		</div>
+						 	</div>
+					 		<div class="slider_content_right">
+					 				<p>一个会议</p>
+					 				<p>@Fenglin Campus,Fudan</p>
+					 				<p>首次技术启动会议，但是两个技术人员直接消失。这不重要。重要的是，十年后，那次会议现场的所有人会变成什么样？</p>
+					 			</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2013</p>
+						 			<span>Sep</span>
+						 			<span>24</span>
+						 		</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 				<p>找到基地</p>
+					 				<p>@ Jia Mansion,ShangHai</p>
+					 				<p>杀不死我的只能使我更强，在一个新地方继续原先的旅程。多少个梦想才能击败现实？我们叫它基地。</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2013</p>
+						 			<span>Nov</span>
+						 			<span>07</span>
+						 		</div>
+						 	</div>
+					 		<div class="slider_content_right">
+					 				<p>你所看到的开始</p>
+					 				<p>@ Jiafa Mansion, Shanghai</p>
+					 				<p>10years.me网站正式上线。你所使用的域名第一次激活，你所看到的历史开始上演。</p>
+					 			</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2014</p>
+						 			<span>Mar</span>
+						 			<span>15</span>
+						 		</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 				<p>进入Innospace</p>
+					 				<p>@ KIC, Shanghai</p>
+					 				<p>拿到了第一笔投资，团队搬进了上海最优秀的孵化器之一。遇到了更多更有趣的人，开始潜心优化产品。</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2014</p>
+						 			<span>Oct</span>
+						 			<span>17</span>
+					 			</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 				<p>梦想的移动化</p>
+					 				<p>@ Yangpu, Shanghai</p>
+					 				<p>IOS版本正式上线，让人们可以更好地记录追梦历程</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2016</p>
+						 			<span>Sep</span>
+						 			<span>20</span>
+					 			</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 				<p>今天: 未来正在发生</p>
+					 				<p>@ 你的眼前</p>
+					 				<p>未来，每时每刻都在发生。今天，加入十年后，和我们一起，创造属于自己的未来。</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2017</p>
+						 			<span>Apr</span>
+						 			<span>08</span>
+					 			</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 			<p>创建属于你的梦想</p>
+					 			<p>@ 十年后</p>
+					 			<p>点击时间轴上的图标即可添加梦想。只需填入该梦想的名称，预期的实现时间，以及对该梦想的描述，就可成功创建。</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2017</p>
+						 			<span>Oct</span>
+						 			<span>25</span>
+					 			</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 			<p>记录追梦历程</p>
+					 			<p>@ 十年后</p>
+					 			<p>你可以基于每个梦想随时记录实时的追梦历程，以及你关于梦想瞬间的想法。我们不希望你在这里仅仅是许愿，而是真正地把自己的梦想映射到今日的生活。</p>
+					 		</div>
+					 	</div>
+					 </div>
+					 <div class="slider_item">
+					 	<div class="slider_content">
+					 		<div class="slider_content_leftFather">
+						 		<div class="slider_content_left">
+						 			<p>2018</p>
+						 			<span>Aug</span>
+						 			<span>21</span>
+					 			</div>
+					 		</div>
+					 		<div class="slider_content_right">
+					 				<p>与有趣的追梦者互动</p>
+					 				<p>@ 十年后</p>
+					 				<p>你也可以在十年后关注任何有想法、有趣的人。你可以在发现页面看到的各种有趣的追梦故事，也可以来自你主动的主题搜索。</p>
+					 		</div>
+					 	</div>
+					 </div>
+				</div>
+				<div id="navigation">
+						<div class="navigation_content">
+							<div class="center_line"></div>
+							<div class="mark first_mark">
+								<div class="mark_content" style="margin-top: 20px;">
+									<img src="../img/dream_process_hover.png" alt="">
+									<p>一个想法</p>
+									
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 35px;">
+									<img src="../img/dream_process.png" alt="">
+									<p>一次会议</p>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 49px;">
+									<img src="../img/dream_success.png" alt="">
+									<p>找到基地</p>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 20px;">
+									<img src="../img/dream_process_hover.png" alt="">
+									<p>你所看到的开始</p>
+									<div class="show_DIV">
+										志向不过是记忆的奴隶，生气勃勃地降生，但却很难成长。<br/>
+										<b>——莎士比亚</b>
+										<span class="qipao"></span>
+									</div>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 60px;">
+									<img src="../img/dream_process.png" alt="">
+									<p>进入Innospace</p>
+									<div class="show_DIV">
+										谁不会休息，谁就不会工作。<br/>
+										<b>——列宁</b>
+										<span class="qipao"></span>
+									</div>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 40px;">
+									<img src="../img/dream_success.png" alt="">
+									<p>梦想的移动化</p>
+									<div class="show_DIV">
+										在年轻人的颈项上，没有什么东西能比事业心这颗灿烂的宝珠更迷人的了。<br/>
+										<b>——哈菲兹</b>
+										<span class="qipao"></span>
+									</div>
+								</div>
+								
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 80px;">
+									<img src="../img/dream_process_hover.png" alt="">
+									<p>今天：未来正在发生</p>
+									<div class="show_DIV">
+										真正的才智是刚毅的志向。<br/>
+										<b>——拿破仑</b>
+										<span class="qipao"></span>
+									</div>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 57px;">
+									<img src="../img/dream_process.png" alt="">
+									<p>创建属于你的梦想</p>
+									<div class="show_DIV">
+										时间是一切财富中最宝贵的财富。<br/>
+										<b>——拿德奥弗拉斯多</b>
+										<span class="qipao"></span>
+									</div>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 100px;">
+									<img src="../img/dream_success.png" alt="">
+									<p>记录追梦历程</p>
+									<div class="show_DIV">
+										没有人不爱惜他的生命，但很少人珍视他的时间。<br/>
+										<b>——梁实秋</b>
+										<span class="qipao"></span>
+									</div>
+								</div>
+							</div>
+							<div class="mark">
+								<div class="mark_content" style="margin-top: 30px;">
+									<img src="../img/dream_process.png" alt="">
+									<p>与有趣的追梦者互动</p>
+								</div>
+							</div>
+						</div>
+						<div class="navigation_time">
+							<div class="minor"></div>
+							<div class="time">
+								<div class="text_indent">2013</div>
+								<div class="text_indent">2014</div>
+								<div class="text_indent">2015</div>
+								<div class="text_indent">2016</div>
+								<div class="text_indent">2017</div>
+								<div class="text_indent">2018</div>
+								<div class="text_indent">2019</div>
+							</div>
+						</div>
+					</div>
+				<div class="left_next_father">
+					<div id="left_next"><img src="../img/timeline_arrow_left.png" alt=""></div>
+					</div>
+					<div class="right_next_father">
+					<div id="right_next"><img src="../img/timeline_arrow_right.png" alt=""></div>
+				</div>
+			</div>
+		</div>
+		<!-- 时间尺结束 -->
+		<!-- 第三屏 摩天轮开始 -->
+		<div id="FerrisWheel">
+			<div class="tableCell_div">
+				<div class="section_explore">
+					<h2>探索更多有趣的梦想</h2>
+					<div class="explore_animation">发现在
+						<div id="animation_content">
+							<ul class="explore_ul">
+								<li><a href="">生活</a></li>
+								<li><a href="">学习</a></li>
+								<li><a href="">工作</a></li>
+								<li><a href="">创新</a></li>
+								<li><a href="">健康</a></li>
+								<li><a href="">旅行</a></li>
+								<li><a href="">文艺</a></li>
+								<li><a href="">情感</a></li>
+							</ul>
+						</div>
+						的梦想家
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 摩天轮结束 -->
+		<!-- 第四屏开始 -->
+		<div id="login_section">
+			<!-- 内容篇 -->
+			<div id="section_content">
+				<div class="section_model">
+					<div class="section_channel">
+						<div class="d1 dv" >
+							<a href="" class="father_a">
+								<div class="d2">生活</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p>梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p>动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d9 dv">
+							<a href="" class="father_a">
+								<div class="d2">学习</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p>梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p>动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d3 dv">
+							<a href="" class="father_a">
+								<div class="d2">工作</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p class="p1">梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p class="p1">动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d4 dv">
+							<a href="" class="father_a">
+								<div class="d2">创新</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p class="p1">梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p class="p1">动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d5 dv">
+							<a href="" class="father_a">
+								<div class="d2">健康</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p class="p1">梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p class="p1">动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d6 dv">
+							<a href="" class="father_a">
+								<div class="d2">旅行</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p class="p1">梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p class="p1">动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d7 dv">
+							<a href="" class="father_a">
+								<div class="d2">文艺</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p class="p1">梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p class="p1">动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="d8 dv">
+							<a href="" class="father_a">
+								<div class="d2">情感</div>
+								<div class="show_div">
+									<div class="show_left">
+										<p>12976</p>
+										<p class="p1">梦想</p>
+									</div>
+									<div class="show_right">
+										<p>18004</p>
+										<p class="p1">动态</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 底部 -->
+			<div id="login_floot">
+				<div class="floot_content">
+					<div class="floot_content_col floot_content1">
+						<img src="../img/logo_login.png" alt="">
+						<p>与世界分享你的追梦历程</p>
+						<div>「十年后」是一个基于梦想的经验交流社区。在这里，你可以自由的分享关于未来梦想的真实想法，并探索更多有趣的梦想，结交志同道合的人。</div>
+					</div>
+					<div class="floot_content_col floot_content2">
+						<p>关于我们</p>
+						<ul>
+							<li><a href="">关于十年后</a></li>
+							<li><a href="">团队成员</a></li>
+							<li><a href="">加入我们</a></li>
+							<li><a href="">用户协议</a></li>
+							<li><a href="">回到旧版</a></li>
+						</ul>
+					</div>
+					<div class="floot_content_col floot_content2">
+						<p>媒体报道</p>
+						<ul>
+							<li><a href="">PingWest</a></li>
+							<li><a href="">动点科技</a></li>
+							<li><a href="">IT桔子</a></li>
+							<li><a href="">创业邦</a></li>
+							<li><a href="">i黑马</a></li>
+						</ul>
+					</div>
+					<div class="floot_content_col floot_content2">
+						<p>下载应用</p>
+						<div class="floot_content2_child">
+							<div class="floot_content2_left">
+								<div class="ios"><a href=""><img src="../img/blueApple.png" alt=""><span>iOS 版</span></a></div>
+								<div class="android"><a href=""><img src="../img/blueAd.png" alt=""><span>Android 版</span></a></div>
+							</div>
+							<div class="floot_content2_right"><img src="../img/qrcode.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+				<!-- 版权信息 -->
+				<div class="foolt_copy">
+					<p>© 2013 - 2015 10years.me. All Rights Reserved. Created in China. 沪ICP备13021804号</p>
+					<a href="" class="first_a"></a>
+					<a href=""></a>
+				</div>
+			</div>
+		</div>
+		<!-- 结束 -->
+	</div>
+
+	<script type="text/javascript" src="../js/years.js"></script>
+</body>
+</html>
